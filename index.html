@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kadr_project — Фотостудия</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">KADR_PROJECT</a>
+            <nav class="nav">
+                <a href="#about">Біз туралы</a>
+                <a href="#halls">Залдар</a>
+                <a href="#services">Қызметтер</a>
+                <a href="#contact" class="btn-nav">Брондау</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>kadr_project фотостудиясы</h1>
+            <p>Кәсіби фотосессиялар мен шығармашылық идеяларға арналған кеңістік.</p>
+            <a href="#contact" class="btn">Уақыт таңдау</a>
+        </div>
+    </section>
+
+    <section id="halls" class="container section">
+        <h2>Біздің Залдар</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Зал 1 — Циклорама</h3>
+                <p>Көлемді заттар мен топтық түсірілімдерге арналған ақ аймақ.</p>
+                <span class="price">10 000 ₸ / сағ</span>
+            </div>
+            <div class="card">
+                <h3>Зал 2 — Терезе</h3>
+                <p>Панорамалық орта, табиғи жарықпен жұмыс істеуге арналған.</p>
+                <span class="price">12 000 ₸ / сағ</span>
+            </div>
+            <div class="card">
+                <h3>Зал 3 — Қара зал</h3>
+                <p>Портреттер мен клиптерге арналған заманауи қара кеңістік.</p>
+                <span class="price">15 000 ₸ / сағ</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container section">
+        <h2>Брондау / Байланыс</h2>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Бронь қабылданды!');">
+            <input type="text" placeholder="Атыңыз" required>
+            <input type="tel" placeholder="Телефон номеріңіз" required>
+            <select required>
+                <option value="">Залды таңдаңыз</option>
+                <option value="1">Зал 1 — Циклорама</option>
+                <option value="2">Зал 2 — Терезе</option>
+                <option value="3">Зал 3 — Қара зал</option>
+            </select>
+            <button type="submit" class="btn">Жіберу</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 kadr_project. Барлық құқықтар қорғалған.</p>
+    </footer>
+
+</body>
+</html>
