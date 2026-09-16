@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kadr_project — Фотостудия</title>
+    <meta name="description" content="kadr_project фотостудиясы: залдар, бағалар, брондау">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,7 +25,10 @@
         <div class="container hero-content">
             <h1>kadr_project фотостудиясы</h1>
             <p>Кәсіби фотосессиялар мен шығармашылық идеяларға арналған кеңістік.</p>
-            <a href="#contact" class="btn">Уақыт таңдау</a>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn">Уақыт таңдау</a>
+                <a href="#halls" class="btn btn-outline">Залдармен танысу</a>
+            </div>
         </div>
     </section>
 
@@ -35,16 +39,19 @@
                 <h3>Зал 1 — Циклорама</h3>
                 <p>Көлемді заттар мен топтық түсірілімдерге арналған ақ аймақ.</p>
                 <span class="price">10 000 ₸ / сағ</span>
+                <a href="#contact" class="btn-card" onclick="selectHall('1')">Осы залды брондау</a>
             </div>
             <div class="card">
                 <h3>Зал 2 — Терезе</h3>
                 <p>Панорамалық орта, табиғи жарықпен жұмыс істеуге арналған.</p>
                 <span class="price">12 000 ₸ / сағ</span>
+                <a href="#contact" class="btn-card" onclick="selectHall('2')">Осы залды брондау</a>
             </div>
             <div class="card">
                 <h3>Зал 3 — Қара зал</h3>
                 <p>Портреттер мен клиптерге арналған заманауи қара кеңістік.</p>
                 <span class="price">15 000 ₸ / сағ</span>
+                <a href="#contact" class="btn-card" onclick="selectHall('3')">Осы залды брондау</a>
             </div>
         </div>
     </section>
@@ -54,7 +61,7 @@
         <form class="contact-form" onsubmit="event.preventDefault(); alert('Бронь қабылданды!');">
             <input type="text" placeholder="Атыңыз" required>
             <input type="tel" placeholder="Телефон номеріңіз" required>
-            <select required>
+            <select id="hallSelect" required>
                 <option value="">Залды таңдаңыз</option>
                 <option value="1">Зал 1 — Циклорама</option>
                 <option value="2">Зал 2 — Терезе</option>
@@ -65,8 +72,21 @@
     </section>
 
     <footer class="footer">
-        <p>&copy; 2026 kadr_project. Барлық құқықтар қорғалған.</p>
+        <div class="container footer-content">
+            <p>&copy; 2026 kadr_project. Барлық құқықтар қорғалған.</p>
+            <div class="social-buttons">
+                <a href="https://instagram.com" target="_blank" rel="noopener" class="btn-social">Instagram</a>
+                <a href="https://wa.me/77771886211" target="_blank" rel="noopener" class="btn-social">WhatsApp</a>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        function selectHall(value) {
+            var select = document.getElementById('hallSelect');
+            if (select) { select.value = value; }
+        }
+    </script>
 
 </body>
 </html>
