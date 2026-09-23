@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kadr_project — Photo Studio & Services</title>
-    <meta name="description" content="kadr_project photo studio: studio halls, professional services, booking">
+    <title>Kadr Project — Photo Studio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,7 +11,7 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <a href="#" class="logo">KADR_PROJECT</a>
+            <a href="#" class="logo">Kadr Project</a>
             <nav class="nav">
                 <a href="#about">About Us</a>
                 <a href="#halls">Halls</a>
@@ -22,10 +21,11 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Үлкен фотостудия фоны белән) -->
     <section class="hero">
+        <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <h1>kadr_project Photo Studio</h1>
+            <h1>Kadr Project Photo Studio</h1>
             <p>A creative space for professional photography, video production, and content creation.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn btn-large">Book a Session</a>
@@ -39,7 +39,7 @@
         <h2>About Studio</h2>
         <div class="about-grid">
             <div class="about-text">
-                <p>kadr_project is a modern photo studio located in the city center. We offer professional lighting equipment, versatile backdrops, and spacious photo zones for any type of media shoot.</p>
+                <p>Kadr Project is a modern photo studio located in the city center. We offer professional lighting equipment, versatile backdrops, and spacious photo zones for any type of media shoot.</p>
             </div>
             <div class="about-stats">
                 <div class="stat">
@@ -68,7 +68,7 @@
                     <h3>Hall 1 — Cyclorama</h3>
                     <div class="card-footer-box">
                         <span class="price">10 000 ₸ / hour</span>
-                        <a href="#contact" class="btn-card" onclick="selectHall('1')">Select Hall</a>
+                        <a href="#contact" class="btn-card">Select Hall</a>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                     <h3>Hall 2 — Window Light</h3>
                     <div class="card-footer-box">
                         <span class="price">12 000 ₸ / hour</span>
-                        <a href="#contact" class="btn-card" onclick="selectHall('2')">Select Hall</a>
+                        <a href="#contact" class="btn-card">Select Hall</a>
                     </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@
                     <h3>Hall 3 — Dark Room</h3>
                     <div class="card-footer-box">
                         <span class="price">15 000 ₸ / hour</span>
-                        <a href="#contact" class="btn-card" onclick="selectHall('3')">Select Hall</a>
+                        <a href="#contact" class="btn-card">Select Hall</a>
                     </div>
                 </div>
             </div>
@@ -158,7 +158,7 @@
             <form class="contact-form" onsubmit="event.preventDefault(); alert('Booking request submitted!');">
                 <input type="text" placeholder="Your Name" required>
                 <input type="tel" placeholder="Phone Number" required>
-                <select id="hallSelect" required>
+                <select required>
                     <option value="">Select Studio Hall</option>
                     <option value="1">Hall 1 — Cyclorama</option>
                     <option value="2">Hall 2 — Window Light</option>
@@ -172,20 +172,9 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-content">
-            <p>&copy; 2026 kadr_project. All rights reserved.</p>
-            <div class="social-buttons">
-                <a href="https://instagram.com" target="_blank" rel="noopener" class="btn-social">Instagram</a>
-                <a href="https://wa.me/77771886211" target="_blank" rel="noopener" class="btn-social">WhatsApp</a>
-            </div>
+            <p>&copy; 2026 Kadr Project. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        function selectHall(value) {
-            var select = document.getElementById('hallSelect');
-            if (select) { select.value = value; }
-        }
-    </script>
 
 </body>
 </html>
