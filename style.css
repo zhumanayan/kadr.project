@@ -242,7 +242,7 @@ body {
   margin-top: 4px;
 }
 
-/* ===== Cards ===== */
+/* ===== Исправленные стили карточек ===== */
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -282,7 +282,7 @@ body {
   padding: 24px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  height: 100%;
 }
 
 .card h3 {
@@ -292,19 +292,22 @@ body {
 
 .card p {
   color: var(--color-muted);
-  margin-bottom: 18px;
-  flex-grow: 1;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Растягивает текст, чтобы кнопка и цена всегда были внизу */
 }
 
+/* Блок цены и кнопки размещаем вертикально с отступом */
 .price {
+  display: block;
   font-size: 18px;
   font-weight: bold;
   color: var(--color-accent);
-  margin-bottom: 18px;
+  margin-bottom: 12px; /* Добавлен отступ снизу, чтобы кнопка не налегала */
 }
 
 .btn-card {
-  display: inline-block;
+  display: block; /* Делаем кнопку блочной */
+  width: 100%; /* Кнопка во всю ширину карточки */
   text-align: center;
   background: transparent;
   color: var(--color-accent);
