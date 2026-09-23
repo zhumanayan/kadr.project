@@ -1,79 +1,167 @@
 <!DOCTYPE html>
-<html lang="kk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kadr_project — Фотостудия</title>
-    <meta name="description" content="kadr_project фотостудиясы: залдар, бағалар, брондау">
+    <title>kadr_project — Photo Studio & Services</title>
+    <meta name="description" content="kadr_project photo studio: studio halls, professional services, booking">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Header -->
     <header class="header">
         <div class="container">
             <a href="#" class="logo">KADR_PROJECT</a>
             <nav class="nav">
-                <a href="#about">Біз туралы</a>
-                <a href="#halls">Залдар</a>
-                <a href="#services">Қызметтер</a>
-                <a href="#contact" class="btn-nav">Брондау</a>
+                <a href="#about">About Us</a>
+                <a href="#halls">Halls</a>
+                <a href="#services">Services</a>
+                <a href="#contact" class="btn-nav">Book Now</a>
             </nav>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <h1>kadr_project фотостудиясы</h1>
-            <p>Кәсіби фотосессиялар мен шығармашылық идеяларға арналған кеңістік.</p>
+            <h1>kadr_project Photo Studio</h1>
+            <p>A creative space for professional photography, video production, and content creation.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn">Уақыт таңдау</a>
-                <a href="#halls" class="btn btn-outline">Залдармен танысу</a>
+                <a href="#contact" class="btn">Book a Session</a>
+                <a href="#services" class="btn btn-outline">Explore Services</a>
             </div>
         </div>
     </section>
 
+    <!-- About Section -->
+    <section id="about" class="container section">
+        <h2>About Studio</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>kadr_project is a modern photo studio located in the city center. We offer professional lighting equipment, versatile backdrops, and spacious photo zones for any type of media shoot.</p>
+                <p>Whether you need product photography, commercial video, or personal portraits, our space is designed to meet high standards of modern visual production.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat">
+                    <span class="stat-num">3</span>
+                    <span class="stat-label">Unique Halls</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">500+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">24/7</span>
+                    <span class="stat-label">Support</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Halls Section -->
     <section id="halls" class="container section">
-        <h2>Біздің Залдар</h2>
+        <h2>Studio Halls</h2>
         <div class="cards">
             <div class="card">
-                <h3>Зал 1 — Циклорама</h3>
-                <p>Көлемді заттар мен топтық түсірілімдерге арналған ақ аймақ.</p>
-                <span class="price">10 000 ₸ / сағ</span>
-                <a href="#contact" class="btn-card" onclick="selectHall('1')">Осы залды брондау</a>
+                <div class="card-body">
+                    <h3>Hall 1 — Cyclorama</h3>
+                    <p>Large white seamless cyclorama area for commercial, fashion, and product shoots.</p>
+                    <span class="price">10 000 ₸ / hour</span>
+                    <a href="#contact" class="btn-card" onclick="selectHall('1')">Select Hall</a>
+                </div>
             </div>
             <div class="card">
-                <h3>Зал 2 — Терезе</h3>
-                <p>Панорамалық орта, табиғи жарықпен жұмыс істеуге арналған.</p>
-                <span class="price">12 000 ₸ / сағ</span>
-                <a href="#contact" class="btn-card" onclick="selectHall('2')">Осы залды брондау</a>
+                <div class="card-body">
+                    <h3>Hall 2 — Window Light</h3>
+                    <p>Panoramic natural light zone filled with soft sunlight, perfect for portraits and lifestyle.</p>
+                    <span class="price">12 000 ₸ / hour</span>
+                    <a href="#contact" class="btn-card" onclick="selectHall('2')">Select Hall</a>
+                </div>
             </div>
             <div class="card">
-                <h3>Зал 3 — Қара зал</h3>
-                <p>Портреттер мен клиптерге арналған заманауи қара кеңістік.</p>
-                <span class="price">15 000 ₸ / сағ</span>
-                <a href="#contact" class="btn-card" onclick="selectHall('3')">Осы залды брондау</a>
+                <div class="card-body">
+                    <h3>Hall 3 — Dark Room</h3>
+                    <p>Atmospheric dark interior with professional studio flashes and RGB light setups.</p>
+                    <span class="price">15 000 ₸ / hour</span>
+                    <a href="#contact" class="btn-card" onclick="selectHall('3')">Select Hall</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="container section">
-        <h2>Брондау / Байланыс</h2>
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Бронь қабылданды!');">
-            <input type="text" placeholder="Атыңыз" required>
-            <input type="tel" placeholder="Телефон номеріңіз" required>
-            <select id="hallSelect" required>
-                <option value="">Залды таңдаңыз</option>
-                <option value="1">Зал 1 — Циклорама</option>
-                <option value="2">Зал 2 — Терезе</option>
-                <option value="3">Зал 3 — Қара зал</option>
-            </select>
-            <button type="submit" class="btn">Жіберу</button>
-        </form>
+    <!-- Services Section (English) -->
+    <section id="services" class="container section">
+        <h2>Our Services</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Portrait Photography</h3>
+                    <p>Individual portrait sessions, business headshots, and personal creative shoots with professional retouching.</p>
+                    <span class="price">From 25 000 ₸</span>
+                    <a href="#contact" class="btn-card">Order Service</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3>Commercial & Lookbook</h3>
+                    <p>High-quality product and fashion shoots for e-commerce, catalogs, brand lookbooks, and marketplaces.</p>
+                    <span class="price">From 40 000 ₸</span>
+                    <a href="#contact" class="btn-card">Order Service</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3>Video Production</h3>
+                    <p>Short promotional videos, Instagram Reels, TikTok content, and interviews with professional audio and lighting.</p>
+                    <span class="price">From 35 000 ₸</span>
+                    <a href="#contact" class="btn-card">Order Service</a>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- Contact / Booking Section -->
+    <section id="contact" class="container section">
+        <h2>Booking & Contact</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="info-row">
+                    <span class="info-label">Address</span>
+                    <span class="info-value">Almaty city, Abay ave. 150</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Working Hours</span>
+                    <span class="info-value">09:00 - 22:00 (Daily)</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Phone</span>
+                    <span class="info-value">+7 (777) 188-62-11</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Email</span>
+                    <span class="info-value">info@kadrproject.kz</span>
+                </div>
+            </div>
+
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Booking request submitted!');">
+                <input type="text" placeholder="Your Name" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <select id="hallSelect" required>
+                    <option value="">Select Studio Hall</option>
+                    <option value="1">Hall 1 — Cyclorama</option>
+                    <option value="2">Hall 2 — Window Light</option>
+                    <option value="3">Hall 3 — Dark Room</option>
+                </select>
+                <button type="submit" class="btn">Submit Request</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container footer-content">
-            <p>&copy; 2026 kadr_project. Барлық құқықтар қорғалған.</p>
+            <p>&copy; 2026 kadr_project. All rights reserved.</p>
             <div class="social-buttons">
                 <a href="https://instagram.com" target="_blank" rel="noopener" class="btn-social">Instagram</a>
                 <a href="https://wa.me/77771886211" target="_blank" rel="noopener" class="btn-social">WhatsApp</a>
