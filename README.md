@@ -1,33 +1,48 @@
-# kadr.project — Жұман Аян фотостудиясы
+# kadr.project — Zhuman Ayan Photo Studio
 
-Django арқылы ашылатын лендинг (залдар, бағалар, брондау формасы).
+Landing page for the Zhuman Ayan Photo Studio.
 
-## Жергілікті компьютерде іске қосу
+## 🔗 Project Links
 
-```bash
-cd kadr.project
-python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-python manage.py runserver
-```
+* **Website (GitHub Pages):** [https://zhumanayan.github.io/kadr.project/](https://zhumanayan.github.io/kadr.project/)
+* **Repository:** [https://github.com/zhumanayan/kadr.project](https://github.com/zhumanayan/kadr.project)
 
-Содан кейін браузерде ашыңыз: http://127.0.0.1:8000/
+---
 
-## Құрылымы
+## 📝 Laboratory Works Overview
 
-```
+### Laboratory Work No. 1: Django Web Application
+* Django framework setup and main page configuration.
+* Application architecture with defined routes and views (`urls.py`, `views.py`).
+
+### Laboratory Work No. 2: HTML5, CSS3 and Responsive Web Design
+* Semantic HTML5 markup (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`).
+* CSS3 styling for layout, color palette, typography, and interactive components.
+* Responsive design adapting across Mobile, Tablet, and Desktop screen sizes using CSS Media Queries.
+* Tested via Browser DevTools across 3 viewport widths with saved assets in `screenshots/`.
+
+---
+
+## 📱 Responsive Screenshots (`screenshots/`)
+
+* **Mobile View (375px):** `screenshots/375px.png`
+* **Tablet View (768px):** `screenshots/768px.png`
+* **Desktop View (1280px):** `screenshots/1280px.png`
+
+---
+
+## 📁 Project Structure
 kadr.project/
+├── index.html
+├── style.css
+├── screenshots/
+│   ├── 375px.png
+│   ├── 768px.png
+│   └── 1280px.png
 ├── manage.py
 ├── requirements.txt
-├── kadrproject/        # Django баптаулары (settings, urls, wsgi/asgi)
-└── landing/            # Лендинг қосымшасы
-    ├── views.py        # index() — басты бетті шығарады
-    ├── urls.py
-    └── templates/landing/index.html   # HTML5 + CSS3 лендинг
-```
-
-## GitHub-қа жүктеу
-
-Репозиторийге осы `kadr.project` қалтасының ішіндегісін толығымен қосыңыз
-(`.gitignore` файлы `venv/` мен `__pycache__/`-ды қоспайды).
+├── kadrproject/
+└── landing/
+├── views.py
+├── urls.py
+└── templates/landing/index.html
