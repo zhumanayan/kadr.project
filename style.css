@@ -1,4 +1,4 @@
-/* ===== :root айнымалылары ===== */
+/* ===== :root Variables ===== */
 :root {
   --color-bg: #faf7f2;
   --color-surface: #ffffff;
@@ -39,7 +39,7 @@ body {
   margin: auto;
 }
 
-/* ===== Header (CSS nesting мысалы) ===== */
+/* ===== Header ===== */
 .header {
   background: var(--color-surface);
   padding: 20px 0;
@@ -47,16 +47,18 @@ body {
   top: 0;
   z-index: 100;
   border-bottom: 1px solid var(--color-line);
+}
 
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    @media (max-width: 599px) {
-      flex-direction: column;
-      gap: 12px;
-    }
+@media (max-width: 599px) {
+  .header .container {
+    flex-direction: column;
+    gap: 12px;
   }
 }
 
@@ -71,37 +73,41 @@ body {
 .nav {
   display: flex;
   align-items: center;
+}
 
-  @media (max-width: 599px) {
+@media (max-width: 599px) {
+  .nav {
     flex-direction: column;
     gap: 8px;
   }
+}
 
-  a {
-    color: var(--color-muted);
-    text-decoration: none;
-    margin-left: 20px;
-    transition: 0.3s;
+.nav a {
+  color: var(--color-muted);
+  text-decoration: none;
+  margin-left: 20px;
+  transition: 0.3s;
+}
 
-    &:hover {
-      color: var(--color-ink);
-    }
-
-    @media (max-width: 599px) {
-      margin-left: 0;
-    }
+@media (max-width: 599px) {
+  .nav a {
+    margin-left: 0;
   }
+}
 
-  .btn-nav {
-    background: var(--color-accent);
-    color: #fff !important;
-    padding: 8px 16px;
-    border-radius: 4px;
+.nav a:hover {
+  color: var(--color-ink);
+}
 
-    &:hover {
-      background: var(--color-accent-dark);
-    }
-  }
+.nav .btn-nav {
+  background: var(--color-accent);
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.nav .btn-nav:hover {
+  background: var(--color-accent-dark);
 }
 
 /* ===== Hero ===== */
@@ -111,32 +117,31 @@ body {
   display: flex;
   align-items: center;
   text-align: center;
+}
 
-  &-content {
-    h1 {
-      /* clamp(мин, өспелі, макс) — экран еніне қарай өзі бейімделеді */
-      font-size: clamp(28px, 6vw, 48px);
-      margin-bottom: 15px;
-      color: var(--color-ink);
-    }
+.hero-content h1 {
+  font-size: clamp(28px, 6vw, 48px);
+  margin-bottom: 15px;
+  color: var(--color-ink);
+}
 
-    p {
-      font-size: clamp(15px, 2.4vw, 20px);
-      margin-bottom: 30px;
-      color: var(--color-muted-2);
-    }
-  }
+.hero-content p {
+  font-size: clamp(15px, 2.4vw, 20px);
+  margin-bottom: 30px;
+  color: var(--color-muted-2);
+}
 
-  &-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
 
-    @media (max-width: 599px) {
-      flex-direction: column;
-      align-items: stretch;
-    }
+@media (max-width: 599px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
 
@@ -154,32 +159,32 @@ body {
   background: var(--color-accent);
   color: #fff;
   border: none;
+}
 
-  &:hover {
-    background: var(--color-accent-dark);
-  }
+.btn:hover {
+  background: var(--color-accent-dark);
 }
 
 .btn-outline {
   background: transparent;
   color: var(--color-accent);
   border: 1px solid var(--color-accent);
+}
 
-  &:hover {
-    background: var(--color-accent-soft);
-  }
+.btn-outline:hover {
+  background: var(--color-accent-soft);
 }
 
 /* ===== Sections ===== */
 .section {
   padding: 80px 0;
+}
 
-  h2 {
-    text-align: center;
-    font-size: clamp(24px, 4vw, 32px);
-    margin-bottom: 40px;
-    color: var(--color-ink);
-  }
+.section h2 {
+  text-align: center;
+  font-size: clamp(24px, 4vw, 32px);
+  margin-bottom: 40px;
+  color: var(--color-ink);
 }
 
 /* ===== About ===== */
@@ -188,8 +193,10 @@ body {
   grid-template-columns: 1.3fr 1fr;
   gap: 50px;
   align-items: center;
+}
 
-  @media (max-width: 599px) {
+@media (max-width: 768px) {
+  .about-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -208,42 +215,48 @@ body {
   border: 1px solid var(--color-line);
   border-radius: var(--radius);
   padding: 26px 20px;
+}
 
-  @media (max-width: 599px) {
+@media (max-width: 599px) {
+  .about-stats {
     flex-direction: column;
-  }
-
-  .stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-    &-num {
-      font-size: 26px;
-      font-weight: bold;
-      color: var(--color-accent);
-    }
-
-    &-label {
-      font-size: 12.5px;
-      color: var(--color-muted);
-      margin-top: 4px;
-    }
   }
 }
 
-/* ===== Cards (Үш ен: 1 / 2 / 3 баған) ===== */
+.about-stats .stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-stats .stat-num {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--color-accent);
+}
+
+.about-stats .stat-label {
+  font-size: 12.5px;
+  color: var(--color-muted);
+  margin-top: 4px;
+}
+
+/* ===== Cards ===== */
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+}
 
-  @media (max-width: 1023px) {
+@media (max-width: 1023px) {
+  .cards {
     grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  @media (max-width: 599px) {
+@media (max-width: 599px) {
+  .cards {
     grid-template-columns: 1fr;
   }
 }
@@ -257,38 +270,30 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+}
 
-  &:hover {
-    transform: translateY(-5px);
-    border-color: var(--color-accent);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  }
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-accent);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
 
-  &-photo {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-    max-width: 100%;
-  }
+.card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 
-  &-body {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-  }
+.card h3 {
+  margin-bottom: 12px;
+  color: var(--color-ink);
+}
 
-  h3 {
-    margin-bottom: 12px;
-    color: var(--color-ink);
-  }
-
-  p {
-    color: var(--color-muted);
-    margin-bottom: 18px;
-    flex-grow: 1;
-  }
+.card p {
+  color: var(--color-muted);
+  margin-bottom: 18px;
+  flex-grow: 1;
 }
 
 .price {
@@ -309,11 +314,11 @@ body {
   text-decoration: none;
   font-size: 14.5px;
   transition: 0.3s;
+}
 
-  &:hover {
-    background: var(--color-accent);
-    color: #fff;
-  }
+.btn-card:hover {
+  background: var(--color-accent);
+  color: #fff;
 }
 
 /* ===== Contact ===== */
@@ -323,8 +328,10 @@ body {
   gap: 40px;
   max-width: 900px;
   margin: 0 auto;
+}
 
-  @media (max-width: 599px) {
+@media (max-width: 599px) {
+  .contact-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -334,38 +341,42 @@ body {
   border: 1px solid var(--color-line);
   border-radius: var(--radius);
   padding: 26px;
+}
 
-  .info-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--color-line-soft);
+.contact-info .info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-line-soft);
+}
 
-    &:last-child {
-      border-bottom: none;
-    }
+.contact-info .info-row:last-child {
+  border-bottom: none;
+}
 
-    @media (max-width: 599px) {
-      flex-direction: column;
-      gap: 2px;
-    }
+@media (max-width: 599px) {
+  .contact-info .info-row {
+    flex-direction: column;
+    gap: 2px;
   }
+}
 
-  .info-label {
-    color: var(--color-muted);
-    font-size: 14px;
-  }
+.contact-info .info-label {
+  color: var(--color-muted);
+  font-size: 14px;
+}
 
-  .info-value {
-    color: var(--color-ink);
-    font-size: 14.5px;
-    font-weight: 500;
-    text-align: right;
+.contact-info .info-value {
+  color: var(--color-ink);
+  font-size: 14.5px;
+  font-weight: 500;
+  text-align: right;
+}
 
-    @media (max-width: 599px) {
-      text-align: left;
-    }
+@media (max-width: 599px) {
+  .contact-info .info-value {
+    text-align: left;
   }
 }
 
@@ -377,20 +388,22 @@ body {
   padding: 26px;
   border-radius: var(--radius);
   border: 1px solid var(--color-line);
+}
 
-  input, select {
-    padding: 12px;
-    background: var(--color-bg);
-    border: 1px solid var(--color-line);
-    border-radius: 4px;
-    color: var(--color-ink);
-    font-size: 16px;
+.contact-form input, 
+.contact-form select {
+  padding: 12px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-line);
+  border-radius: 4px;
+  color: var(--color-ink);
+  font-size: 16px;
+}
 
-    &:focus {
-      outline: none;
-      border-color: var(--color-accent);
-    }
-  }
+.contact-form input:focus, 
+.contact-form select:focus {
+  outline: none;
+  border-color: var(--color-accent);
 }
 
 /* ===== Footer ===== */
@@ -401,13 +414,13 @@ body {
   border-top: 1px solid var(--color-line);
   color: var(--color-muted);
   font-size: 14px;
+}
 
-  &-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-  }
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
 }
 
 .social-buttons {
@@ -424,9 +437,9 @@ body {
   text-decoration: none;
   font-size: 13.5px;
   transition: 0.3s;
+}
 
-  &:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-  }
+.btn-social:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
